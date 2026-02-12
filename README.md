@@ -22,7 +22,7 @@ The projects section fetches public repositories from https://github.com/agnesab
 To exclude repos, edit the filter in script.js (see loadProjects).
 
 ## Deployment
-This site is fully static and deploys for free on GitHub Pages.
+This site is fully static and deployed on GitHub Pages. URL: https://agnesabimoussa.github.io/my-portfolio/
 
 ## Customize
 - Update content in index.html
