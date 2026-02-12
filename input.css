@@ -1,0 +1,302 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+p,
+li,
+label,
+input,
+textarea,
+button {
+    font-size: 1.125rem;
+}
+
+.text-sm {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+}
+
+h1 {
+    line-height: 1.15;
+}
+
+h2 {
+    line-height: 1.2;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #b820e6;
+    outline-offset: 2px;
+}
+
+.dark p,
+.dark li,
+.dark label,
+.dark .text-gray-600,
+.dark .text-gray-700 {
+    color: #d1d5db !important;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4 {
+    color: #f3f4f6 !important;
+}
+
+/* Footer social component */
+.footer-social {
+    margin-top: 6px;
+}
+
+.footer-social .wrapper {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+}
+
+.footer-social .wrapper .icon {
+    position: relative;
+    background: #fff;
+    color: #111827;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.footer-social .wrapper .icon a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+}
+
+.footer-social .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 12px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    white-space: nowrap;
+}
+
+.footer-social .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.footer-social .wrapper .icon:hover .tooltip {
+    top: -40px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.footer-social .wrapper .icon:hover,
+.footer-social .wrapper .icon:hover .tooltip,
+.footer-social .wrapper .icon:hover .tooltip::before {
+    color: #fff;
+}
+
+.footer-social .wrapper .github-link:hover,
+.footer-social .wrapper .github-link:hover .tooltip,
+.footer-social .wrapper .github-link:hover .tooltip::before {
+    background: #24292e;
+}
+
+.footer-social .wrapper .linkedin-link:hover,
+.footer-social .wrapper .linkedin-link:hover .tooltip,
+.footer-social .wrapper .linkedin-link:hover .tooltip::before {
+    background: #0a66c2;
+}
+
+.footer-social .wrapper .email-link:hover,
+.footer-social .wrapper .email-link:hover .tooltip,
+.footer-social .wrapper .email-link:hover .tooltip::before {
+    background: #e4405f;
+}
+
+.dark .footer-social .wrapper .icon {
+    background: #20153a;
+    color: #f8fafc;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+}
+
+.dark .footer-social .wrapper .tooltip,
+.dark .footer-social .wrapper .tooltip::before {
+    background: #20153a;
+}
+
+/* Button hover effects */
+button, a[role="button"], .cursor-pointer {
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover, a[role="button"]:hover, .cursor-pointer:hover {
+    transform: scale(1.05);
+}
+
+/* Specific for project send buttons */
+.border.rounded-full.w-9.aspect-square {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.border.rounded-full.w-9.aspect-square:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 640px) {
+    body {
+        font-size: 18px;
+        line-height: 1.65;
+    }
+
+    .footer-social .wrapper .icon {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* Project cards */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.project-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 260px;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.14);
+}
+
+.dark .project-card {
+    background: #1a0c2a;
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 14px 30px rgba(8, 2, 16, 0.55);
+}
+
+.project-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.project-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    word-break: break-word;
+}
+
+.dark .project-card__title {
+    color: #f8fafc;
+}
+
+.project-card__desc {
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.dark .project-card__desc {
+    color: #d1d5db;
+}
+
+.project-card__footer {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.dark .project-card__footer {
+    border-top-color: rgba(255, 255, 255, 0.16);
+}
+
+.project-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #374151;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.dark .project-card__link {
+    color: #f3f4f6;
+}
+
+.project-card__link:hover {
+    color: #111827;
+}
+
+.dark .project-card__link:hover {
+    color: #ffffff;
+}
+
